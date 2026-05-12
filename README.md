@@ -40,14 +40,14 @@ adaptive-garment-manufacturing/
 ```
 
 Detailed instructions for each component are in their respective READMEs:
-- [`pipeline/README.md`](pipeline/README.md)
+- [`adaptive_fashion/README.md`](adaptive_fashion/README.md)
 - [`robotics/README.md`](robotics/README.md)
 
 ---
 
 ## System Architecture (simplified)
 
-```mermaid
+```
 graph TD
     A[Social Media\n(Instagram, Pinterest)] --> B[Multi‑Modal Trend Detection\nYOLOS (vision) + BART (text)]
     B --> C[TFT Demand Forecast\n(30 days)]
@@ -57,7 +57,6 @@ graph TD
     F --> G[RL Cutting Agent\n(SAC)]
 ```
 
-*If Mermaid is not supported in your viewer, the diagram shows a linear flow from social media data, through multi‑modal trend detection, demand forecasting, factory digital twin, and finally to the robotic cutting cell, with an RL inventory agent and an RL cutting agent as parallel optimisation components.*
 
 ---
 

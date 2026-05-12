@@ -1,6 +1,3 @@
-Here’s a **README.md** for your **adaptive‑fashion pipeline**. It assumes the folder structure we discussed (i.e., a `pipeline/` directory with subfolders for scraping, preprocessing, forecasting, and simulation). You can place it inside `pipeline/README.md` or at the root of the repository if the pipeline is the main focus.
-
-```markdown
 # Adaptive Garment Manufacturing – AI Pipeline
 
 This is the **data‑driven pipeline** portion of the thesis **Adaptive Garment Manufacturing: A Multi‑Modal AI Pipeline for Trend Prediction and Digital Twin Simulation**.

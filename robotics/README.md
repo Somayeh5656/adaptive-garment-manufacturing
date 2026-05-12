@@ -1,4 +1,3 @@
-```markdown
 # fashion_robotics_ws – Robotic Cutting Cell
 
 Part of the **Adaptive Garment Manufacturing** thesis.
@@ -99,51 +98,3 @@ After training, the model file is created in the same directory. The cutting ser
 - **Segfault/OpenGL** – launch Gazebo with `xvfb-run -a` if running headless, or use the headless rendering flag already in the launch file.
 - **Service not available** – verify that the cutting service node is running and all environments are sourced.
 ```
--------------------------
-
-ssh -Y ubuntu@eunoia-vm
-source /opt/ros/humble/setup.bash
-source ~/fashion_robotics_ws/install/setup.bash
-ros2 launch fabric_cell_bringup gazebo_simulation.launch.py
-
-ssh -Y ubuntu@eunoia-vm
-source /opt/ros/humble/setup.bash
-source ~/fashion_robotics_ws/install/setup.bash
-ros2 topic list
-
-ssh -Y ubuntu@eunoia-vm
-ros2 run fabric_cell_control cutting_service
-
-ssh -Y ubuntu@eunoia-vm
-ros2 run fabric_cell_control perception_node
-
-ssh -Y ubuntu@eunoia-vm
-cd ~/adaptive_fashion
-source ~/adaptive_fashion/venv/bin/activate
-python evaluate_rl.py
-
-
-
-cd ~/fashion_robotics_ws
-rm -rf build install log
-colcon build --symlink-install
-source install/setup.bash
-
-
-source ~/ros_venv/bin/activate
-source /opt/ros/jazzy/setup.bash
-source ~/fashion_robotics_ws/install/setup.bash
-cd ~/fashion_robotics_ws/src/fabric_cell_control/scripts
-python train_vision_cutting_rl.py
-
-
-
---------
-cutting service 
-
-cd ~/fashion_robotics_ws
-rm -rf build/fabric_cell_control install/fabric_cell_control
-colcon build --packages-select fabric_cell_control --symlink-install
-source install/setup.bash
-
-ros2 run fabric_cell_control cutting_service
