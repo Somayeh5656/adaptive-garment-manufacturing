@@ -1,0 +1,15 @@
+# Controller configuration for the robotic cutting cell.
+# Loaded by the gz_ros2_control plugin (see cutting_cell.urdf).
+# Defines two controllers:
+#   - joint_state_broadcaster : publishes joint states for TF
+#   - joint_velocity_controller : accepts velocity commands for arm joints
+controller_manager:
+  ros__parameters:
+    update_rate: 100          # Hz
+    use_sim_time: true
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    joint_velocity_controller:
+      type: velocity_controllers/JointGroupVelocityController

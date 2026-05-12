@@ -1,0 +1,9 @@
+# ExecuteCut.srv – service for the robotic cutting cell
+# Request
+string fabric_type          # material type (e.g., "cotton", "denim")
+int32 batch_size            # number of garments to cut in this request
+---
+# Response
+float32 total_cycle_time    # total cutting time for the whole batch (seconds)
+float32 avg_waste_percentage # average waste fraction per garment (0.0–1.0)
+bool success                # true if the cutting operation succeeded
