@@ -1,4 +1,3 @@
-```markdown
 # Adaptive Garment Manufacturing
 
 **A Multi‑Modal AI Pipeline for Trend Prediction and Digital Twin Simulation**
